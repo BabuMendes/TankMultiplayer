@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7670921106117961918}
-  - component: {fileID: 3792718815100196582}
+  - component: {fileID: 3159778599475962578}
   m_Layer: 0
   m_Name: TurretPivot
   m_TagString: Untagged
@@ -201,7 +201,7 @@ Transform:
   - {fileID: 8550366419183702324}
   m_Father: {fileID: 190369589417585607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3792718815100196582
+--- !u!114 &3159778599475962578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7139638654656641304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6e161113300694ca254da96bb9268e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 0
@@ -241,8 +241,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8906899345010395480}
   - component: {fileID: 7229158494804866644}
-  - component: {fileID: 7200220475578813310}
   - component: {fileID: 8131713710737029069}
+  - component: {fileID: 6422659922442431573}
   m_Layer: 0
   m_Name: TankTracks
   m_TagString: Untagged
@@ -318,36 +318,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7200220475578813310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7431455985896140313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 0
-  SyncPositionY: 0
-  SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 1
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!61 &8131713710737029069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -393,6 +363,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.765625, y: 2.0546875}
   m_EdgeRadius: 0
+--- !u!114 &6422659922442431573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7431455985896140313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6e161113300694ca254da96bb9268e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 0
+  SyncPositionY: 0
+  SyncPositionZ: 0
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &7972725292029857194
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190369589417585607}
   - component: {fileID: 4104449281741185450}
-  - component: {fileID: -7129588893449084342}
+  - component: {fileID: 8825442911224231204}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -448,7 +448,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &-7129588893449084342
+--- !u!114 &8825442911224231204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7972725292029857194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6e161113300694ca254da96bb9268e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 1
