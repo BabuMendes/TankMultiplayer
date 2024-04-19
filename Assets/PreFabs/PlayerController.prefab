@@ -662,6 +662,7 @@ GameObject:
   - component: {fileID: 280005124095762763}
   - component: {fileID: 6059850729346019602}
   - component: {fileID: 6475717874612873669}
+  - component: {fileID: -2468135512005422893}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -844,4 +845,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <maxHealth>k__BackingField: 100
   currentHealth:
+    m_InternalValue: 0
+--- !u!114 &-2468135512005422893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972725292029857194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e997726d6e2727c4aac52f43c02c232e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalCoins:
     m_InternalValue: 0
