@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RespawningCoin : Coin
 {
+    public event Action<RespawningCoin> OnCollected;
     public override int Collect()
     {
         if (!IsServer)
@@ -18,7 +20,15 @@ public class RespawningCoin : Coin
         }
 
         alreadyCollected = true;
+
+        OnCollected?.Invoke(this);
+
         return coinValue;
+    }
+
+    public void Reset()
+    {
+        alreadyCollected = false;
     }
 
 }
