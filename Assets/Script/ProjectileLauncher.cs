@@ -8,6 +8,7 @@ public class ProjectileLauncher : NetworkBehaviour
 {
     [Header("References")]
     [SerializeField] private InputReader inputReader;
+    [SerializeField] private CoinWallet wallet;
     [SerializeField] private Transform projectileSpawnPoint;
     [SerializeField] private GameObject serverProjectilePrefab;
     [SerializeField] private GameObject clientProjectilePrefab;
@@ -18,9 +19,10 @@ public class ProjectileLauncher : NetworkBehaviour
     [SerializeField] private float projectileSpeed;
     [SerializeField] private float fireRate; // 0.75
     [SerializeField] private float muzzleFlashDuration; // 0.075
+    [SerializeField] private int costToFire;
 
     private bool shouldFire;
-    private float previousFireTimer;
+    private float timer;
     private float muzzleFlashTimer;
 
     public override void OnNetworkSpawn()
@@ -65,12 +67,22 @@ public class ProjectileLauncher : NetworkBehaviour
             return;
         }
 
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
         if (!shouldFire)
         {
             return;
         }
 
-        if (Time.time <(1 / fireRate) + previousFireTimer)
+        if(timer > 0)
+        {
+            return;
+        }
+
+        if(wallet.totalCoins.Value < costToFire)
         {
             return;
         }
@@ -78,12 +90,20 @@ public class ProjectileLauncher : NetworkBehaviour
         PrimaryFireServerRpc(projectileSpawnPoint.position, projectileSpawnPoint.up);
         SpawnDummyProjectile(projectileSpawnPoint.position, projectileSpawnPoint.up);
 
-        previousFireTimer = Time.time;
+        timer = 1 / fireRate;
     }
 
     [ServerRpc]
     private void PrimaryFireServerRpc(Vector3 spawnPos, Vector3 direction)
     {
+        if(wallet.totalCoins.Value < costToFire)
+        {
+            return;
+        }
+
+        wallet.SpendCoins(costToFire);
+
+
         GameObject projectileInstance = Instantiate(serverProjectilePrefab, spawnPos, Quaternion.identity);
         projectileInstance.transform.up = direction;
         Physics2D.IgnoreCollision(playerCollider, projectileInstance.GetComponent<Collider2D>());

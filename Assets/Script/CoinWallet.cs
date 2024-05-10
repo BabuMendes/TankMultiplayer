@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -22,5 +23,10 @@ public class CoinWallet : NetworkBehaviour
         }
 
         totalCoins.Value = coinValue;
+    }
+
+    public void SpendCoins(int costToFire)
+    {
+        totalCoins.Value -= costToFire; 
     }
 }
